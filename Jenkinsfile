@@ -1,8 +1,7 @@
 pipeline {
     agent any
     parameters {
-    gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH_NAME', type: 'PT_BRANCH'
-  }
+properties([parameters([gitParameter(branch: '', branchFilter: '.*', defaultValue: 'origin/*', name: 'BRANCH_NAME', quickFilterEnabled: false, selectedValue: 'NONE', sortMode: 'NONE', tagFilter: '*', type: 'GitParameterDefinition')])])  }
     stages {
         stage('Hello') {
             steps {
